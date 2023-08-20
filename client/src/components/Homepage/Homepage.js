@@ -74,20 +74,25 @@ const Homepage = () => {
     return (
         <div className="Homepage">
             <Flex className="noselect" justify="center" align="center" flexDir="column" flexWrap="wrap">
-            {!user && <Heading m="1rem 0" color="whitesmoke" size="lg">Sign In/Register to unlock Premium features</Heading>}
+            {!user && <Heading m="1rem 0" color="whitesmoke" size="lg">Welcome to the Game</Heading>}
             {user && <Heading m="1rem 0" color="whitesmoke" size="lg">Welcome, {user.username}!</Heading>}
             <VStack w="lg" s="1rem" align="center" justify="center">
                 <Spacer/>                
                 <SignIn w="30%" size="lg"/>
                 {!(user) && <SignUp w="30%" size="lg"/>}
-                <GameCodeModal w="30%" size="lg" />
-                <WaitingButton 
-                    w="30%"
-                    size="lg"
-                    onClose={() => {setWaitingToggle(false)}} 
-                    onTrigger={() => {setWaitingToggle(true)}} 
-                    queueLength={waiting.length} 
-                />
+                {
+                    (user) &&
+                <>
+                    <WaitingButton 
+                        w="30%"
+                        size="lg"
+                        onClose={() => {setWaitingToggle(false)}} 
+                        onTrigger={() => {setWaitingToggle(true)}} 
+                        queueLength={waiting.length} 
+                    />
+                    <GameCodeModal w="30%" size="lg" />
+                </>
+                }
             </VStack>
             </Flex>
         </div> 

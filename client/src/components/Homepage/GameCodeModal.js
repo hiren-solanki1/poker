@@ -30,7 +30,7 @@ export default function GameCodeModal(props) {
 
     return (
         <>
-        <Button {...props} onClick={onOpen}>Room Code</Button>
+        <Button {...props} onClick={onOpen}>Enter Room</Button>
         <Modal motionPreset="slideInBottom" closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose} isCentered>
             <ModalOverlay/>
             <ModalContent className="noselect" width="20rem" padding="1.5rem" >

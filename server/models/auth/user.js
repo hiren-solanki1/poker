@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     isValid: {
         type: Boolean,
         required: false,
-        default: false
+        default: true
     }
 }) 
 

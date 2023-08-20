@@ -110,8 +110,7 @@ router.post('/signup', verifyJWT, async (req, res, next) => {
                 email: email,
                 username: username,
                 hash: hash,
-                uniqueString: uniqueString,
-                isValid: false 
+                uniqueString: uniqueString
             }).save()
             await sendMail(email, uniqueString)
             res.status(200).json({ message: 'Registered, verify your email to Sign In' })

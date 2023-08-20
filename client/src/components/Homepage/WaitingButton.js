@@ -27,7 +27,7 @@ export default function WaitingButton({
 			<Popover flip={true} returnFocusOnClose={true} onClose={onClose}>
 				<PopoverTrigger>
 					<Button w={w} size={size} onClick={onTrigger}>
-						Matchmaking
+						New Game
 					</Button>
 				</PopoverTrigger>
 				<Portal>
